@@ -5,3 +5,11 @@ body {
 	margin-bottom: 25px;
 	margin-top: 25px;
 }
+.navbar {
+	background-color: #DCDCDC;
+}
+.navbar > .item {
+	color:#fff !important;
+	float: right;
+	padding: 10px;
+}
