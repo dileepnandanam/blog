@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  include ::ActionView::Layouts
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   def index

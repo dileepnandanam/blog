@@ -58,3 +58,4 @@ gem 'unicorn'
 gem "font-awesome-rails"
 gem 'react-rails'
 gem 'devise'
+gem 'bootstrap', '~> 4.0.0.alpha3'

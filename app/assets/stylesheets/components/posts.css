@@ -1,6 +1,7 @@
 body {
-	background: #800000;
+	background: #8A2BE2 !important;
 }
 .post {
-	margin-bottom: 50px;
+	margin-bottom: 25px;
+	margin-top: 25px;
 }

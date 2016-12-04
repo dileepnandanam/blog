@@ -37,6 +37,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.5.3)
+      execjs
     aws-sdk (1.66.0)
       aws-sdk-v1 (= 1.66.0)
     aws-sdk-v1 (1.66.0)
@@ -53,6 +55,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap (4.0.0.alpha5)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -220,6 +225,7 @@ DEPENDENCIES
   aws-sdk (< 2.0)
   better_errors
   binding_of_caller
+  bootstrap (~> 4.0.0.alpha3)
   coffee-rails (~> 4.1.0)
   devise
   font-awesome-rails
