@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  require 'digest/md5'
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 
@@ -8,10 +9,13 @@ class PostsController < ApplicationController
       {
         created_at: post.created_at.strftime('%d %B %Y'),
         title: post.title,
-        body: post.body
+        body: post.body,
+        comments: comments_for(post),
+        id: post.id
       }
     end
   end
+
 
   def show
   end
@@ -21,5 +25,18 @@ class PostsController < ApplicationController
 
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def comments_for(post)
+      post.comments.map{ |comment|
+        {
+          id: comment.id,
+          created_at: comment.created_at.strftime('%d %B %Y'),
+          text: comment.text,
+          gravathar: "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.user.email)}",
+          email: comment.user.email
+        }
+      }
+
     end
 end

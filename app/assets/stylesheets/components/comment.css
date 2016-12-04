@@ -1,0 +1,10 @@
+.comment {
+	width: 80%;
+}
+.user_details {
+	float:left;
+}
+.coment_body{
+	float:left;
+	padding:10px;
+}

@@ -1,12 +1,14 @@
 body {
-	background: #8A2BE2 !important;
+	background-image: url('https://images2.alphacoders.com/607/607471.jpg'); 
+	background-attachment:fixed;
+
 }
 .post {
 	margin-bottom: 25px;
 	margin-top: 25px;
 }
 .navbar {
-	background-color: #DCDCDC;
+	background-color: #FFF0F5;
 }
 .navbar > .item {
 	color:#fff !important;
