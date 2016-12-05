@@ -46,6 +46,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'pry'
 gem 'pg'
 gem "haml-rails", "~> 0.9"
 gem "paperclip", "~> 4.3"

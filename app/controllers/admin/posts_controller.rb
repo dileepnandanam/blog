@@ -1,7 +1,7 @@
 class Admin::PostsController < ApplicationController
   include ::ActionView::Layouts
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user
   layout 'admin'
   def index
     @posts = Post.all
@@ -49,6 +49,14 @@ class Admin::PostsController < ApplicationController
 
 
   private
+
+    def authenticate_user
+      if current_user.usertype == 'admin'
+        authenticate_user!
+      else
+        redirect_to root_path
+      end
+    end
 
     def set_post
       @post = Post.find(params[:id])

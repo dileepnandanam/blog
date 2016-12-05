@@ -11,7 +11,10 @@ class PostsController < ApplicationController
         title: post.title,
         body: post.body,
         comments: comments_for(post),
-        id: post.id
+        comments_url: comments_url,
+        id: post.id,
+        signed_in: current_user.present?,
+        current_user_gravathar: current_user.present? ? gravathar(current_user.email) : ''
       }
     end
   end
@@ -22,7 +25,10 @@ class PostsController < ApplicationController
 
 
   private
-
+    def gravathar(email)
+      "https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}"
+    end
+      
     def set_post
       @post = Post.find(params[:id])
     end
@@ -33,7 +39,7 @@ class PostsController < ApplicationController
           id: comment.id,
           created_at: comment.created_at.strftime('%d %B %Y'),
           text: comment.text,
-          gravathar: "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.user.email)}",
+          gravathar: gravathar(comment.user.email),
           email: comment.user.email
         }
       }
