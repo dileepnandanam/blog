@@ -14,13 +14,23 @@ class PostsController < ApplicationController
         comments_url: comments_url,
         id: post.id,
         signed_in: current_user.present?,
-        current_user_gravathar: current_user.present? ? gravathar(current_user.email) : ''
+        gravathar: current_user.present? ? gravathar(current_user.email) : ''
       }
     end
   end
 
 
   def show
+    @props = {
+        created_at: @post.created_at.strftime('%d %B %Y'),
+        title: @post.title,
+        body: @post.body,
+        comments: comments_for(@post),
+        comments_url: comments_url,
+        id: @post.id,
+        signed_in: current_user.present?,
+        gravathar: current_user.present? ? gravathar(current_user.email) : ''
+      }
   end
 
 
