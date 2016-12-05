@@ -19,7 +19,7 @@ class CommentForm extends React.Component {
 		return(
 			<div className="comment-form" ref="comment_form">
 				<textarea ref="comment" className="textarea" onClick={this.onFocus}/>
-				<input type="submit" onClick={this.onCommentSubmit} />
+				<input type="submit" onClick={this.onCommentSubmit}  value="Submit comment"/>
 			</div>
 		)
 	}
