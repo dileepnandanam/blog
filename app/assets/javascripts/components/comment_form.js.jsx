@@ -9,6 +9,8 @@ class CommentForm extends React.Component {
 		this.props.onSubmit(comment)
 	}
 	onFocus(){
+		
+
 		if (!this.props.signed_in) {
 			window.location = '/users/sign_up'
 		}
@@ -16,7 +18,7 @@ class CommentForm extends React.Component {
 	render() {
 		return(
 			<div className="comment-form" ref="comment_form">
-				<textarea ref="comment" className="textarea" onFocus={this.onFocus}/>
+				<textarea ref="comment" className="textarea" onClick={this.onFocus}/>
 				<input type="submit" onClick={this.onCommentSubmit} />
 			</div>
 		)
