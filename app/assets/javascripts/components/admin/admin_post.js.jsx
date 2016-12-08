@@ -3,6 +3,7 @@ class AdminPost extends React.Component {
 		super(props)
 		this.editHandle = this.editHandle.bind(this)
 		this.handleDelete = this.handleDelete.bind(this)
+		this.toggleState = this.toggleState.bind(this)
 	}
 	editHandle(){
 		that = this
@@ -20,6 +21,16 @@ class AdminPost extends React.Component {
 		})
 	}
 
+	toggleState() {
+		that = this
+		$.ajax({
+			url: this.props.post_attributes.toggle_state_url,
+			method: 'PUT'
+		}).success(function(data){
+			that.props.handleStateChange(data.id, data.state)
+		})
+	}
+
 
 	handleDelete(){
 		this.props.handleDelete(this.props.id, this.props.post_attributes.destroy_url)
@@ -33,6 +44,10 @@ class AdminPost extends React.Component {
 				<div className='admin-post-title'>
 					{post.title}
 				</div>
+				<div className="state" onClick={this.toggleState}>
+				{post.state == "published" ? "published" : "draft"}
+				</div>
+
 				<a className="action" onClick={this.editHandle}>
 					edit
 				</a>

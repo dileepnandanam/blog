@@ -1,6 +1,6 @@
 class Admin::PostsController < ApplicationController
   include ::ActionView::Layouts
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_state]
   before_action :authenticate_user
   layout 'admin'
   def index
@@ -12,7 +12,10 @@ class Admin::PostsController < ApplicationController
         created_at: post.created_at,
         id: post.id,
         post_url: admin_post_path(post),
-        destroy_url: admin_post_path(post)
+        destroy_url: admin_post_path(post),
+        state: post.state,
+        toggle_state_url: toggle_state_admin_post_path(post)
+
       }
     end
   end
@@ -42,7 +45,9 @@ class Admin::PostsController < ApplicationController
           created_at: @post.created_at,
           id: @post.id,
           post_url: admin_post_path(@post),
-          destroy_url: admin_post_path(@post)
+          destroy_url: admin_post_path(@post),
+          state: @post.state,
+          toggle_state_url: toggle_state_admin_post_path(@post)
         }.to_json
     end
   end
@@ -54,6 +59,14 @@ class Admin::PostsController < ApplicationController
     render json: {id: id}
   end
 
+  def toggle_state
+    if @post.state == 'published'
+      @post.update_attribute(:state, 'draft')
+    else
+      @post.update_attribute(:state, 'published')
+    end
+    render json: {id: @post.id, state: @post.state}
+  end
 
   def create
     @post = Post.new(post_params)
@@ -64,7 +77,9 @@ class Admin::PostsController < ApplicationController
           created_at: @post.created_at,
           id: @post.id,
           post_url: admin_post_path(@post),
-          destroy_url: admin_post_path(@post)
+          destroy_url: admin_post_path(@post),
+          state: @post.state,
+          toggle_state_url: toggle_state_admin_post_path(@post)
         }.to_json
 
       else
@@ -72,6 +87,7 @@ class Admin::PostsController < ApplicationController
       end
     end
   end
+
 
 
   private

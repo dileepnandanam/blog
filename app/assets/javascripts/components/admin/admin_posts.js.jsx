@@ -15,6 +15,7 @@ class AdminPosts extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleEdit = this.handleEdit.bind(this)
 		this.handleDelete = this.handleDelete.bind(this)
+		this.handleStateChange = this.handleStateChange.bind(this)
 	}
 	openForm(){
 		state = this.state
@@ -94,7 +95,16 @@ class AdminPosts extends React.Component {
 			
 	}
 
+	handleStateChange(id, state){
+		posts = this.state.posts
+		post_id = this.findById(posts, id)
+		posts[post_id].state = state
+		this.setState({
+			posts: posts,
+			form: this.state.form
+		})
 
+	}
 
 
 
@@ -103,7 +113,7 @@ class AdminPosts extends React.Component {
 		posts = []
 		for(i=0; i< this.state.posts.length;i++) {
 			posts.push(
-				<AdminPost post_attributes = {this.state.posts[i]} key={this.state.posts[i].id} id={this.state.posts[i].id} handleEdit={this.handleEdit}  handleDelete= {this.handleDelete}/>
+				<AdminPost post_attributes = {this.state.posts[i]} key={this.state.posts[i].id} id={this.state.posts[i].id} handleEdit={this.handleEdit}  handleDelete= {this.handleDelete} handleStateChange = {this.handleStateChange}/>
 			)
 		}
 

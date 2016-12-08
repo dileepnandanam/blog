@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts
   namespace :admin do
-    resources :posts
+    resources :posts do
+      put :toggle_state, on: :member
+    end
   end
   resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
