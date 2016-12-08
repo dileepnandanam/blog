@@ -19,7 +19,13 @@ class AdminPosts extends React.Component {
 	}
 	openForm(){
 		state = this.state
-		state.form.show = true
+		state.form= {
+				title: '',
+				body: '',
+			    show: true,
+			    url: this.props.url,
+			    method: 'POST'
+			}
 		this.setState(state)
 	}
 	findById(posts, id) {
