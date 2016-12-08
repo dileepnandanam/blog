@@ -60,12 +60,11 @@ class Admin::PostsController < ApplicationController
   end
 
   def toggle_state
-    if @post.state == 'published'
-      @post.update_attribute(:state, 'draft')
-    else
-      @post.update_attribute(:state, 'published')
+    if @post.update_attribute(:state, 
+        @post.state == 'published' ? 'draft' : 'published'
+      )
+      render json: {id: @post.id, state: @post.state}
     end
-    render json: {id: @post.id, state: @post.state}
   end
 
   def create

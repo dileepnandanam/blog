@@ -51,7 +51,8 @@ class AdminPosts extends React.Component {
         			created_at: data.created_at,
         			id: data.id,
         			post_url: data.post_url,
-        			destroy_url: data.destroy_url
+        			destroy_url: data.destroy_url,
+        			toggle_state_url: data.toggle_state_url
 				}
 				state = that.state
 				state.posts.push(new_post)
