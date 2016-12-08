@@ -5,9 +5,22 @@ class Admin::PostsController < ApplicationController
   layout 'admin'
   def index
     @posts = Post.all
+    @props = @posts.map do |post|
+      {
+        title: post.title,
+        body: post.body,
+        created_at: post.created_at,
+        id: post.id,
+        post_url: admin_post_path(post),
+        destroy_url: admin_post_path(post)
+      }
+    end
   end
 
   def show
+    respond_to do |format|
+      format.json { render json: {title: @post.title, body: @post.body}}
+    end 
   end
 
 
@@ -23,26 +36,39 @@ class Admin::PostsController < ApplicationController
   def update
     
     if @post.update(post_params)
-      redirect_to admin_post_path, notice: 'Post was successfully updated.'
-    else
-      frender :edit
+      render json: {
+          title: @post.title,
+          body: @post.body,
+          created_at: @post.created_at,
+          id: @post.id,
+          post_url: admin_post_path(@post),
+          destroy_url: admin_post_path(@post)
+        }.to_json
     end
-
   end
 
 
   def destroy
+    id = @post.id
     @post.destroy
-    redirect_to admin_posts_path, notice: 'Post was successfully destroyed.' 
+    render json: {id: id}
   end
 
 
   def create
     @post = Post.new(post_params)
       if @post.save
-        redirect_to admin_posts_path, notice: 'Post was successfully created.'
+        render json: {
+          title: @post.title,
+          body: @post.body,
+          created_at: @post.created_at,
+          id: @post.id,
+          post_url: admin_post_path(@post),
+          destroy_url: admin_post_path(@post)
+        }.to_json
+
       else
-        render :new
+        render nothing: true, status: 422
       end
     end
   end
@@ -51,7 +77,7 @@ class Admin::PostsController < ApplicationController
   private
 
     def authenticate_user
-      if current_user.usertype == 'admin'
+      if current_user.try(:usertype) == 'admin'
         authenticate_user!
       else
         redirect_to root_path

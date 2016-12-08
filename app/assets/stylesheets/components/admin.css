@@ -1,0 +1,33 @@
+.admin_post {
+	padding: 10px;
+	border: 1px solid #DEB887;
+	margin-bottom: 10px;
+}
+.admin_posts {
+	padding: 10px;
+	margin: 10px 10px 10px 10px;
+	background: #FFEBCD;
+}
+.post_form {
+	width: 80%;
+	border: 1px solid #DEB887;
+	padding: 12px;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.title-input{
+	width: 80%;
+}
+.body-input {
+	width: 80%;
+	height:400px;
+}
+.action  {
+	padding:5px;
+	float: right;
+}
+.admin-post-title {
+	float: left;
+	padding: 5px;
+}
