@@ -14,7 +14,8 @@ class Admin::PostsController < ApplicationController
         post_url: admin_post_path(post),
         destroy_url: admin_post_path(post),
         state: post.state,
-        toggle_state_url: toggle_state_admin_post_path(post)
+        toggle_state_url: toggle_state_admin_post_path(post),
+        preview_url: post_path(post)
 
       }
     end
@@ -47,7 +48,8 @@ class Admin::PostsController < ApplicationController
           post_url: admin_post_path(@post),
           destroy_url: admin_post_path(@post),
           state: @post.state,
-          toggle_state_url: toggle_state_admin_post_path(@post)
+          toggle_state_url: toggle_state_admin_post_path(@post),
+          preview_url: post_path(post)
         }.to_json
     end
   end
@@ -78,7 +80,8 @@ class Admin::PostsController < ApplicationController
           post_url: admin_post_path(@post),
           destroy_url: admin_post_path(@post),
           state: @post.state,
-          toggle_state_url: toggle_state_admin_post_path(@post)
+          toggle_state_url: toggle_state_admin_post_path(@post),
+          preview_url: post_path(@post)
         }.to_json
 
       else

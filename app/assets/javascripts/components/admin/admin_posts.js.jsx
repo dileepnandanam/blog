@@ -51,15 +51,7 @@ class AdminPosts extends React.Component {
 				state.form.show = false
 			    that.setState(state)
 			}else {
-				new_post = {
-					title: data.title,
-        			body: data.body,
-        			created_at: data.created_at,
-        			id: data.id,
-        			post_url: data.post_url,
-        			destroy_url: data.destroy_url,
-        			toggle_state_url: data.toggle_state_url
-				}
+				new_post = data
 				state = that.state
 				state.posts.push(new_post)
 				state.form.show = false

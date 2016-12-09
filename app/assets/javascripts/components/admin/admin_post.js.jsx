@@ -49,8 +49,8 @@ class AdminPost extends React.Component {
 				<div className="state" onClick={this.toggleState}>
 				{post.state == "published" ? "published" : "draft"}
 				</div>
-				<a className="action" href={this.props.post_attributes.post_url}>
-					edit
+				<a className="action" href={this.props.post_attributes.preview_url}>
+					preview
 				</a>
 				<a className="action" onClick={this.editHandle} href={'#'}>
 					edit
