@@ -6,6 +6,7 @@ class CommentForm extends React.Component {
 	}
 	onCommentSubmit(){
 		comment = this.refs.comment.value
+		if(comment !='')
 		this.props.onSubmit(comment)
 	}
 	onFocus(){
