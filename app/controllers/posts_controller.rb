@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.where(state: 'published').all
+    @posts = Post.where(state: 'published').order('created_at DESC').all
     @props = @posts.map do |post|
       {
         created_at: post.created_at.strftime('%d %B %Y'),
