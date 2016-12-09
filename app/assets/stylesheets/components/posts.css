@@ -15,3 +15,10 @@ body {
 	float: right;
 	padding: 10px;
 }
+pre {
+	border-radius: 6px;
+	border: 1px solid #DEB887;
+	background: #FFF8DC;
+	font-family: Monospace;
+	padding: 10px;
+}

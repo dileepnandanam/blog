@@ -5,7 +5,8 @@ class AdminPost extends React.Component {
 		this.handleDelete = this.handleDelete.bind(this)
 		this.toggleState = this.toggleState.bind(this)
 	}
-	editHandle(){
+	editHandle(e){
+
 		that = this
 		$.ajax({
 			type: 'GET',
@@ -19,6 +20,7 @@ class AdminPost extends React.Component {
 				method: 'PUT'
 			})	
 		})
+		e.preventDefault()
 	}
 
 	toggleState() {
@@ -47,11 +49,13 @@ class AdminPost extends React.Component {
 				<div className="state" onClick={this.toggleState}>
 				{post.state == "published" ? "published" : "draft"}
 				</div>
-
-				<a className="action" onClick={this.editHandle}>
+				<a className="action" href={this.props.post_attributes.post_url}>
 					edit
 				</a>
-				<a className="action" onClick={this.handleDelete}>
+				<a className="action" onClick={this.editHandle} href={'#'}>
+					edit
+				</a>
+				<a className="action" onClick={this.handleDelete} href={'#'}>
 					delete
 				</a>
 				<div className="clearfix"/>
