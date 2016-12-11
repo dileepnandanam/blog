@@ -18,8 +18,8 @@ class CommentForm extends React.Component {
 	}
 	render() {
 		return(
-			<div className="comment-form" ref="comment_form">
-				<textarea ref="comment" className="textarea" onClick={this.onFocus}/>
+			<div className="comment-form form-group" ref="comment_form">
+				<textarea ref="comment" className="textarea form-control" onClick={this.onFocus}/>
 				<input type="submit" onClick={this.onCommentSubmit}  value="Submit comment"/>
 			</div>
 		)

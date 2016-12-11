@@ -7,10 +7,14 @@ body {
 	margin-bottom: 25px;
 	margin-top: 25px;
 }
-.navbar {
+.nav {
+	width: 100%;
+	margin-top: -25px;
+	position: fixed;
+	border-radius: none !important; 
 	background-color: #FFF0F5;
 }
-.navbar > .item {
+.nav > .item {
 	color:#fff !important;
 	float: right;
 	padding: 10px;
