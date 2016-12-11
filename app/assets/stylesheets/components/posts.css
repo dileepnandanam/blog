@@ -9,8 +9,7 @@ body {
 }
 .nav {
 	width: 100%;
-	margin-top: -25px;
-	position: fixed;
+	
 	border-radius: none !important; 
 	background-color: #FFF0F5;
 }
@@ -25,4 +24,7 @@ pre {
 	background: #FFF8DC;
 	font-family: Monospace;
 	padding: 10px;
+}
+.btn-default {
+	background: #CBB2D7;;
 }
