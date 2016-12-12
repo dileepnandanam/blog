@@ -26,7 +26,21 @@
 .action  {
 	padding:5px;
 	float: right;
+	width: 75px;
 }
+.action.publish {
+	width:90px;
+}
+.action.delete {
+	width: 50px;
+}
+.action.edit {
+	width:50px;
+}
+.action.preview {
+	width: 70px;
+}
+
 .admin-post-title {
 	float: left;
 	padding: 5px;

@@ -4,7 +4,7 @@ class Admin::PostsController < ApplicationController
   before_action :authenticate_user
   layout 'admin'
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC').all
     @props = @posts.map do |post|
       {
         title: post.title,
@@ -57,7 +57,7 @@ class Admin::PostsController < ApplicationController
 
   def destroy
     id = @post.id
-    @post.destroy
+    @post.update_attribute(:deleted, true)
     render json: {id: id}
   end
 

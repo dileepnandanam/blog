@@ -46,18 +46,20 @@ class AdminPost extends React.Component {
 				<div className='admin-post-title'>
 					{post.title}
 				</div>
-				<div className="state" onClick={this.toggleState}>
-				{post.state == "published" ? "published" : "draft"}
-				</div>
-				<a className="action" href={this.props.post_attributes.preview_url}>
-					preview
-				</a>
-				<a className="action" onClick={this.editHandle} href={'#'}>
-					edit
-				</a>
-				<a className="action" onClick={this.handleDelete} href={'#'}>
+				<a className="action delete" onClick={this.handleDelete} href={'#'}>
 					delete
 				</a>
+				<a className="action edit" onClick={this.editHandle} href={'#'}>
+					edit
+				</a>
+				<a className="action preview" href={this.props.post_attributes.preview_url}>
+					preview
+				</a>
+				<a className="action publish" onClick={this.toggleState} href={'#'}>
+				{post.state == "published" ? "published" : "draft"}
+				</a>
+
+				
 				<div className="clearfix"/>
 			</div>
 		)
