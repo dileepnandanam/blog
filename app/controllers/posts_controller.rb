@@ -14,7 +14,8 @@ class PostsController < ApplicationController
         comments_url: comments_url,
         id: post.id,
         signed_in: current_user.present?,
-        gravathar: current_user.present? ? gravathar(current_user.email) : ''
+        gravathar: current_user.present? ? gravathar(current_user.email) : '',
+        post_url: post_path(post)
       }
     end
   end
@@ -29,7 +30,8 @@ class PostsController < ApplicationController
         comments_url: comments_url,
         id: @post.id,
         signed_in: current_user.present?,
-        gravathar: current_user.present? ? gravathar(current_user.email) : ''
+        gravathar: current_user.present? ? gravathar(current_user.email) : '',
+        post_url: post_path(@post)
       }
   end
 

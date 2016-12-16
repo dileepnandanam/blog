@@ -28,3 +28,6 @@ pre {
 .btn-default {
 	background: #CBB2D7;;
 }
+.home-link {
+	float: left !important;
+}

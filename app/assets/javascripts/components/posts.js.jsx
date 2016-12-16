@@ -8,7 +8,7 @@ class Posts extends React.Component {
 		for(i=0; i<this.props.posts.length;i++){
 			post = this.props.posts[i]
 			posts.push(
-				<Post created_at={post.created_at} title={post.title} body={post.body} comments={post.comments} comments_url={post.comments_url }key={post.id} post_id={post.id} gravathar={post.gravathar} signed_in= {post.signed_in}/>
+				<Post created_at={post.created_at} title={post.title} body={post.body} comments={post.comments} comments_url={post.comments_url }key={post.id} post_id={post.id} gravathar={post.gravathar} signed_in= {post.signed_in} post_url={post.post_url}/>
 			)
 		}
 
