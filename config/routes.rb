@@ -2,13 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   root to: 'posts#index'
-  resources :posts
+  
   namespace :admin do
     resources :posts do
       put :toggle_state, on: :member
     end
   end
   resources :comments
+
+
+  resources :posts, path: ''
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

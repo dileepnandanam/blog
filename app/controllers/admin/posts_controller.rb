@@ -103,7 +103,7 @@ class Admin::PostsController < ApplicationController
     end
 
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.where(title: params[:id]).first
     end
 
     def post_params
