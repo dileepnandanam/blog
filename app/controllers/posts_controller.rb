@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     end
       
     def set_post
-      @post = Post.where(title: params[:id]).first
+      @post = Post.where(permalink: params[:id]).first
     end
 
     def comments_for(post)
