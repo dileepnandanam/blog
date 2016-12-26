@@ -1,5 +1,5 @@
 body {
- background: #1a072f !important;
+ background: #8ac1e4 !important;
 }
 .post {
 	margin-bottom: 25px;
@@ -22,6 +22,7 @@ pre {
 	background: #FFF8DC;
 	font-family: Monospace;
 	padding: 10px;
+	text-indent: 0px;
 }
 .btn-default {
 	background: #CBB2D7;;
