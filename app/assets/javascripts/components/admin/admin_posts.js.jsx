@@ -16,6 +16,7 @@ class AdminPosts extends React.Component {
 		this.handleEdit = this.handleEdit.bind(this)
 		this.handleDelete = this.handleDelete.bind(this)
 		this.handleStateChange = this.handleStateChange.bind(this)
+		this.closeForm = this.closeForm.bind(this)
 	}
 	openForm(){
 		state = this.state
@@ -62,8 +63,14 @@ class AdminPosts extends React.Component {
 
 		})
 	}
+	closeForm(){
+		state = this.state
+		state.form.show = false
+		this.setState(state)
+	}
 
 	handleEdit(data){
+		this.closeForm()
 		state = this.state
 		state.form ={
 			title: data.title,
@@ -72,6 +79,7 @@ class AdminPosts extends React.Component {
 		    method: 'PUT',
 		    show: true
 		}
+
 		this.setState(state)
 	}
 
