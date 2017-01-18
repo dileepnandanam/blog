@@ -29,7 +29,7 @@ class CommentBox extends React.Component {
                     created_at: 'just now',
                     text: comment,
                     gravathar: that.props.gravathar,
-                    email: 'comment.user.email'
+                    login: that.props.login
 				}
 				comments.push(new_comment)
 				that.setState({comments: comments})

@@ -1,0 +1,35 @@
+
+== Dileep nandanam
+Home: 04924224279 Cell: 9747515133 dileepsnandanam@gmail.com 
+
+http://dileep.herokuapp.com/ 
+http://dileepnandanam.blogspot.com/ 
+http://stackoverflow.com/users/1547872/dileep-nandanam 
+
+== Professional Summary
+Ruby on Rails developer, who want to make user friendly web applications.
+
+== Skills
+
+* Ruby on Rails
+* React
+* Mysql
+* HTML, CSS
+* Git
+
+== Work History
+
+BangTheTable – Banglore
+software engineer, 01/2013 to 08/2015
+* Contributed to tools for online community engagement platform, like survey, forum topics, newsfeed etc.
+* Implemented consultation hub, which stays as the front page of numerous sites.
+* Worked on analytics team which built a platform for analyzing user engagement on sites.
+* worked on technical support and fixed a hand full of bugs.
+
+Wedogood
+co-founder 09/2015 to present
+* built and deployed online platform for gathering funding for various non profit organizations
+
+== Education
+Btech: Information Technology, 2012
+Government engineering college, palakkad - Palakkad

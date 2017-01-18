@@ -10,6 +10,7 @@ class Comment extends React.Component {
 		  		<img src={comment.gravathar} width="50px"/>
 		  	</div>
 		  	<div className="coment_body float-right">
+		  	    <h5>{comment.login}</h5>
 		  		{comment.text}
 		  	</div>
 		  	<div className="clearfix" />

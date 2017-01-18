@@ -28,8 +28,9 @@ class PostsController < ApplicationController
         body: @post.body,
         comments: comments_for(@post),
         comments_url: comments_url,
-        id: @post.id,
+        post_id: @post.id,
         signed_in: current_user.present?,
+        login: current_user.try(:login),
         gravathar: current_user.present? ? gravathar(current_user.email) : '',
         post_url: post_path(@post)
       }
@@ -52,7 +53,8 @@ class PostsController < ApplicationController
           created_at: comment.created_at.strftime('%d %B %Y'),
           text: comment.text,
           gravathar: gravathar(comment.user.email),
-          email: comment.user.email
+          email: comment.user.email,
+          login: comment.user.login
         }
       }
 
